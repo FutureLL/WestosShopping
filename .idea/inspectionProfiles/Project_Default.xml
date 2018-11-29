@@ -1,0 +1,112 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="AbstractBeanReferencesInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="AsyncMethodInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="ContextComponentScanInconsistencyInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="ContextJavaBeanUnresolvedMethodsInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="DuplicatedBeanNamesInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="InjectionValueTypeInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="JavaDoc" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="TOP_LEVEL_CLASS_OPTIONS">
+        <value>
+          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+          <option name="REQUIRED_TAGS" value="" />
+        </value>
+      </option>
+      <option name="INNER_CLASS_OPTIONS">
+        <value>
+          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+          <option name="REQUIRED_TAGS" value="" />
+        </value>
+      </option>
+      <option name="METHOD_OPTIONS">
+        <value>
+          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+          <option name="REQUIRED_TAGS" value="@return@param@throws or @exception" />
+        </value>
+      </option>
+      <option name="FIELD_OPTIONS">
+        <value>
+          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+          <option name="REQUIRED_TAGS" value="" />
+        </value>
+      </option>
+      <option name="IGNORE_DEPRECATED" value="false" />
+      <option name="IGNORE_JAVADOC_PERIOD" value="true" />
+      <option name="IGNORE_DUPLICATED_THROWS" value="false" />
+      <option name="IGNORE_POINT_TO_ITSELF" value="false" />
+      <option name="myAdditionalJavadocTags" value="date" />
+    </inspection_tool>
+    <inspection_tool class="JdkProxiedBeanTypeInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="MVCPathVariableInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="MissingAspectjAutoproxyInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="RequiredBeanTypeInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="ScheduledMethodInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringAopErrorsInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringAopWarningsInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBeanAttributesInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBeanConstructorArgInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBeanDepedencyCheckInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBeanInstantiationInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBeanLookupMethodInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBeanNameConventionInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBootAdditionalConfig" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBootApplicationProperties" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBootApplicationSetup" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringBootApplicationYaml" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringCacheAnnotationsOnInterfaceInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringCacheNamesInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringCacheableAndCachePutInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringCacheableComponentsInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringComponentScan" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringContextConfigurationInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringElInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringElStaticFieldInjectionInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringEventListenerInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringFacetCodeInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringFacetInspection" enabled="true" level="TYPO" enabled_by_default="true">
+      <option name="checkTestFiles" value="false" />
+    </inspection_tool>
+    <inspection_tool class="SpringFacetProgrammaticInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringFactoryMethodInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringHandlersSchemasHighlighting" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringInactiveProfileHighlightingInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringIncorrectResourceTypeInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringInjectionValueConsistencyInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringInjectionValueStyleInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringIntegrationDeprecations21" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringIntegrationModel" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringJavaAutowiredFieldsWarningInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringJavaAutowiredMembersInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringJavaConfigExternalBeansErrorInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringJavaConfigInconsistencyInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringJavaConstructorAutowiringInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringJavaInjectionPointsAutowiringInspection" enabled="true" level="BLOCKER" enabled_by_default="true" />
+    <inspection_tool class="SpringJavaStaticMembersAutowiringInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringLookupInjectionInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringMVCInitBinder" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringMVCViewInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringMessageDispatcherWebXmlInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringPlaceholdersInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringPublicFactoryMethodInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringRequiredAnnotationInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringRequiredPropertyInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringScopesInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringSecurityAnnotationBeanPointersResolveInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringSecurityDebugActivatedInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringSecurityFiltersConfiguredInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringSecurityModelInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringTestingDirtiesContextInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringTestingTransactionalInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringTransactionalComponentInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringWebServiceAnnotationsInconsistencyInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringWebServicesConfigurationsInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringXmlAutowireExplicitlyInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringXmlAutowiringInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SpringXmlModelInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="UnparsedCustomBeanInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="UnresolvedMessageChannel" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="UtilSchemaInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+  </profile>
+</component>
