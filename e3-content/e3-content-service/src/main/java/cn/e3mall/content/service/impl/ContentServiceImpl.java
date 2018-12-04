@@ -38,7 +38,7 @@ public class ContentServiceImpl implements ContentService {
         content.setUpdated(new Date());
         //插入到数据库
         contentMapper.insert(content);
-        //缓存同步，删除缓存中对应的数据
+        //缓存同步，只要插入数据，那么删除缓存中对应的数据
         jedisClient.hdel(CONTENT_LIST,content.getCategoryId().toString());
         return E3Result.ok();
     }
@@ -63,7 +63,7 @@ public class ContentServiceImpl implements ContentService {
             e.printStackTrace();
         }
 
-        //如果灭有查询数据库
+        //如果没有查询数据库
         TbContentExample example=new TbContentExample();
         Criteria criteria = example.createCriteria();
         //设置查询条件

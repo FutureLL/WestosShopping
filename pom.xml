@@ -15,6 +15,8 @@
         <module>ShoppingWeb</module>
         <module>e3-portal-web</module>
         <module>e3-content</module>
+        <module>e3-search</module>
+        <module>e3-search-web</module>
     </modules>
 
     <properties>
@@ -27,6 +29,13 @@
     </properties>
 
     <dependencies>
+        <!--Solr客户端-->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>7.5.0</version>
+        </dependency>
+
         <!-- Apache工具组件 -->
         <dependency>
             <groupId>org.apache.commons</groupId>

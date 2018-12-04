@@ -23,7 +23,7 @@
     </properties>
 
     <dependencies>
-        <!--web层依赖interface层以及content的interface层-->
+        <!--web层依赖interface层、content的interface层以及search的interface-->
         <dependency>
             <groupId>org.westos</groupId>
             <artifactId>shoppingmanagerinterface</artifactId>
@@ -32,6 +32,11 @@
         <dependency>
             <groupId>org.westos</groupId>
             <artifactId>e3-content-interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.westos</groupId>
+            <artifactId>e3-search-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

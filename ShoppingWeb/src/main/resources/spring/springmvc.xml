@@ -48,5 +48,6 @@
     <dubbo:reference interface="cn.e3mall.service.ItemCatService" id="itemCatService"/>
     <dubbo:reference interface="cn.e3mall.content.service.ContentCategoryService" id="contentCategoryService"/>
     <dubbo:reference interface="cn.e3mall.content.service.ContentService" id="contentService"/>
+    <dubbo:reference interface="cn.e3mall.search.serivce.SearchItemServer" id="searchItemServer"/>
 
 </beans>
