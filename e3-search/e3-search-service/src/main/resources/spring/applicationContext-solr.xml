@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+    <!-- 单机版solr服务配置 -->
+    <!--<bean id="builder" class="org.apache.solr.client.solrj.impl.HttpSolrClient.Builder">-->
+        <!--<constructor-arg name="baseSolrUrl" value="http://192.168.25.120:8080/solr/coremain" />-->
+    <!--</bean>-->
+    <!--<bean factory-bean="builder" factory-method="build" id="httpSolrClient"/>-->
+
+    <!-- 集群版solr服务 -->
+    <bean id="empty_builder" class="org.apache.solr.client.solrj.impl.CloudSolrClient.Builder" />
+    <bean id="builder" factory-bean="empty_builder" factory-method="withZkHost">
+        <constructor-arg value="192.168.229.128:2181,192.168.229.128:2182,192.168.229.128:2183" type="java.lang.String" />
+    </bean>
+    <bean id="cloudSolrClient" factory-bean="builder" factory-method="build">
+        <property name="defaultCollection" value="collection"/>
+    </bean>
+</beans>

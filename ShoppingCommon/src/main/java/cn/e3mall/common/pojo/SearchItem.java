@@ -65,4 +65,13 @@ public class SearchItem implements Serializable {
     public void setCategory_name(String category_name) {
         this.category_name = category_name;
     }
+
+    //因为所有的图片都写在了一个url中，造成了非法的格式，所以这里需要将这个非法的url使用","分隔开，返回一个字符串数组
+    public String[] getImages(){
+        if(image!=null &&!"".equals(image)){
+            String[] strings=image.split(",");
+            return strings;
+        }
+        return null;
+    }
 }

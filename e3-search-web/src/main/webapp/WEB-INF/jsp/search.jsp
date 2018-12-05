@@ -50,7 +50,8 @@
             <div class="l-wrap">
 				<div class="pic">
 					<a class="trackref" href="http://localhost:8086/item/${item.id}.html" title="" target="_blank">
-						<img src="${item.image}" style="display:inline"/>
+                        <%--这里接收到的是一个关于图片服务器存储的位置路径的字符串数组--%>
+						<img src="${item.images[0]}" style="display:inline"/>
 					</a>
 				</div>
 	            <div class="price">
