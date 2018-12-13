@@ -12,8 +12,12 @@ import cn.e3mall.service.ItemService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import javax.jms.*;
 import java.util.Date;
 import java.util.List;
 
@@ -24,6 +28,13 @@ public class ItemServiceImpl implements ItemService {
     private TbItemMapper itemMapper;
     @Autowired
     private TbItemDescMapper itemDescMapper;
+    @Autowired
+    private JmsTemplate jmsTemplate;
+    /**
+     * 这里将xml中的配置文件中的topicDestination注入到这里
+     */
+    @Resource
+    private Destination topicDestination;
 
     @Override
     public TbItem getItemById(long itemId) {
@@ -65,7 +76,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public E3Result addItem(TbItem item, String desc) {
         //生成商品id
-        long itemId = IDUtils.genItemId();
+        final long itemId = IDUtils.genItemId();
         //补全item的属性
         item.setId(itemId);
         //1-正常，2-下架，3-删除
@@ -83,6 +94,17 @@ public class ItemServiceImpl implements ItemService {
         itemDesc.setUpdated(new Date());
         //向商品描述表插入数据
         itemDescMapper.insert(itemDesc);
+        //发送一个商品添加消息
+        /**
+         * 这里有一个问题：消息发送了，但是事务还没有提交，这里消息可能已经到达了e3-search-service的ItemAddMessageListener
+         */
+        jmsTemplate.send(topicDestination, new MessageCreator() {
+            @Override
+            public Message createMessage(Session session) throws JMSException {
+                TextMessage textMessage = session.createTextMessage(itemId + "");
+                return textMessage;
+            }
+        });
         //返回成功
         return E3Result.ok();
     }

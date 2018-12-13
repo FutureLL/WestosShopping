@@ -8,7 +8,7 @@ import javax.jms.*;
 /**
  * @author Mr.Li
  * @version 1.0
- * @Description:  订阅模式发送、接收消息测试
+ * @Description:  Topic订阅模式发送、接收消息测试
  * @Modified By:
  * @date 2018/12/11 22:49
  */

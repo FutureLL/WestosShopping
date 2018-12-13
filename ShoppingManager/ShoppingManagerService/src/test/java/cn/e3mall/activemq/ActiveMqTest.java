@@ -8,7 +8,7 @@ import javax.jms.*;
 /**
  * @author Mr.Li
  * @version 1.0
- * @Description: 点到点形式发送、接收消息测试
+ * @Description: Queue点到点形式发送、接收消息测试
  * @Modified By:
  * @date 2018/12/11 15:50
  */
@@ -69,7 +69,7 @@ public class ActiveMqTest {
         //使用Connection对象创建一个Session对象
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         //创建一个Destination对象。queue对象
-        Queue queue = session.createQueue("test-queue");
+        Queue queue = session.createQueue("spring-queue");
         //使用Session对象创建一个消费者对象
         MessageConsumer consumer = session.createConsumer(queue);
         //接受消息
