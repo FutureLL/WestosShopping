@@ -30,7 +30,7 @@
     </properties>
 
     <dependencies>
-        <!--Freemarker的jar包-->
+        <!--FreeMarker的jar包-->
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
@@ -252,6 +252,7 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <!-- FreeMarker整合springMVC -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>

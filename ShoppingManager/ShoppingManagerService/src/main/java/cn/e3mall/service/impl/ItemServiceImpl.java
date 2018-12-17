@@ -127,7 +127,8 @@ public class ItemServiceImpl implements ItemService {
         itemDescMapper.insert(itemDesc);
         //发送一个商品添加消息
         /**
-         * 这里有一个问题：消息发送了，但是事务还没有提交，这里消息可能已经到达了e3-search-service的ItemAddMessageListener
+         * 这里有一个问题：
+         *      消息发送了，但是事务还没有提交，这里消息可能已经到达了e3-search-service的ItemAddMessageListener
          */
         jmsTemplate.send(topicDestination, new MessageCreator() {
             @Override

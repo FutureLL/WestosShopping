@@ -38,6 +38,12 @@
         <!--<property name="maxUploadSize" value="5242880"></property>-->
     <!--</bean>-->
 
+    <!--配置FreeMarker-->
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/ftl/" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+
     <!-- 引用dubbo服务 -->
     <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
     <dubbo:application name="e3-item-web"/>
