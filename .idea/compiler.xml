@@ -13,13 +13,21 @@
         <module name="e3-search-interface" />
         <module name="e3-search-service" />
         <module name="e3-search-web" />
+        <module name="e3-sso-interface" />
+        <module name="e3-sso-service" />
+        <module name="e3-sso-web" />
         <module name="ShoppingCommon" />
         <module name="ShoppingManagerDao" />
         <module name="ShoppingManagerInterface" />
         <module name="ShoppingManagerPojo" />
         <module name="ShoppingManagerService" />
         <module name="ShoppingWeb" />
+        <module name="sso-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="e3-sso-service" target="1.7" />
+      <module name="e3sso-service" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

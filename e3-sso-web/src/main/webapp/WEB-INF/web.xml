@@ -4,10 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>e3-item-web</display-name>
+  <display-name>e3-sso-web</display-name>
 
   <display-name>Archetype Created Web Application</display-name>
 
+  <!--欢迎页被springmvc前端控制器拦截，拦截了就走到了IndexController类中-->
+  <!--欢迎页-->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
@@ -29,20 +31,17 @@
 
   <!-- springmvc的前端控制器 -->
   <servlet>
-    <servlet-name>e3-item-web</servlet-name>
+    <servlet-name>e3-sso-web</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <!-- contextConfigLocation不是必须的， 如果不配置contextConfigLocation， springmvc的配置文件默认在：WEB-INF/servlet的name+"-servlet.xml" -->
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <!--因为这里不止要加载springmvc.xml还要加载applicationContext-activemq.xml-->
-      <param-value>classpath:spring/*.xml</param-value>
+      <param-value>classpath:spring/springmvc.xml</param-value>
     </init-param>
-    <!--启动load-on-startup，才会初始化servlet，才会初始化一个spring容器-->
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>e3-item-web</servlet-name>
-    <!--伪静态化-->
-    <url-pattern>*.html</url-pattern>
+    <servlet-name>e3-sso-web</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>

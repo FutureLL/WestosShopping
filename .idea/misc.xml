@@ -7,6 +7,9 @@
     <file type="web" url="file://$PROJECT_DIR$/e3-portal-web" />
     <file type="web" url="file://$PROJECT_DIR$/e3-search-web" />
     <file type="web" url="file://$PROJECT_DIR$/e3-search/e3-search-service" />
+    <file type="web" url="file://$PROJECT_DIR$/e3-sso-web" />
+    <file type="web" url="file://$PROJECT_DIR$/e3-sso/e3-sso-service" />
+    <file type="web" url="file://$PROJECT_DIR$/e3-sso/sso-service" />
     <file type="web" url="file://$PROJECT_DIR$/ShoppingManager/ShoppingManagerService" />
     <file type="web" url="file://$PROJECT_DIR$/ShoppingWeb" />
   </component>
@@ -15,6 +18,11 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/e3-sso/e3-sso-service/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
