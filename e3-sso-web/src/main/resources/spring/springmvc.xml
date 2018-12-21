@@ -26,9 +26,9 @@
     </bean>
 
     <!-- 配置资源映射 -->
-    <mvc:resources location="/css/" mapping="/css/**"/>
-    <mvc:resources location="/js/" mapping="/js/**"/>
-    <mvc:resources location="/images/" mapping="/images/**"/>
+    <!--<mvc:resources location="/css/" mapping="/css/**"/>-->
+    <!--<mvc:resources location="/images/" mapping="/images/**"/>-->
+    <!--<mvc:resources location="/js/" mapping="/js/**"/>-->
 
     <!--多媒体解析器：前端页面不做文件上传，所以不需要多媒体解析器-->
     <!-- 定义文件上传解析器 -->
@@ -45,7 +45,6 @@
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
     <dubbo:registry protocol="zookeeper" address="zookeeper://127.0.0.1:2181"/>
     <!-- 生成远程服务代理，可以和本地bean一样使用itemService -->
-    <!--<dubbo:reference interface="cn.e3mall.content.service.ContentService" id="contentService" />-->
-
+    <dubbo:reference interface="cn.e3mall.sso.service.RegisterServcice" id="registerServcice" />
 
 </beans>
