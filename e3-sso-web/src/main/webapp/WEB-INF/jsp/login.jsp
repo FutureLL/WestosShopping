@@ -138,7 +138,7 @@
 					if (data.status == 200) {
 						jAlert('登录成功！',"提示", function(){
 							if (redirectUrl == "") {
-								location.href = "http://localhost:8082";
+								location.href = "http://localhost:1026";
 							} else {
 								location.href = redirectUrl;
 							}
@@ -155,12 +155,13 @@
 				}
 			}
 		
-	};
-	$(function(){
-		$("#login_sub").click(function(){
-			LOGIN.login();
+		};
+		//下面这个方法在页面加载完成之后会被执行
+		$(function(){
+			$("#login_sub").click(function(){
+				LOGIN.login();
+			});
 		});
-	});
-</script>
-
+	</script>
+</body>
 </html>

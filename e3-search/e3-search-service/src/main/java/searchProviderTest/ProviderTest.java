@@ -12,7 +12,7 @@ public class ProviderTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
         context.start();
 
-        System.out.println("Dubbo SearchProvider start...");
+        System.out. println("Dubbo SearchProvider start...");
 
         try {
             System.in.read();   // 按任意键退出

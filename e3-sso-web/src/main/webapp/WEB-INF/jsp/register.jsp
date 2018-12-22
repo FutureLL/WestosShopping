@@ -164,6 +164,7 @@
 	            	
 		},
 		doSubmit:function() {
+		    //serialize():这里的regForm_mod是一个form表单，serialize()表示提交表单
 			$.post("/user/register",$("#regForm_mod").serialize(), function(data){
 				if(data.status == 200){
 					jAlert('用户注册成功，请登录！',"提示", function(){
