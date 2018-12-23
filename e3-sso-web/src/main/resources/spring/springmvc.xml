@@ -47,5 +47,6 @@
     <!-- 生成远程服务代理，可以和本地bean一样使用itemService -->
     <dubbo:reference interface="cn.e3mall.sso.service.RegisterServcice" id="registerServcice" />
     <dubbo:reference interface="cn.e3mall.sso.service.LoginService" id="loginService" />
+    <dubbo:reference interface="cn.e3mall.sso.service.TokenService" id="tokenService"/>
 
 </beans>
