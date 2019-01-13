@@ -1,6 +1,7 @@
 package cn.e3mall.cart.controller;
 
 import cn.e3mall.common.utils.CookieUtils;
+import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.common.utils.JsonUtils;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.service.ItemService;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,7 +46,7 @@ public class CartController {
         //判断商品在商品列表中是否存在
         boolean flag=false;
         for (TbItem tbItem : cartList){
-            //如果存在数量相加
+            //如果存在，数量相加
             if (tbItem.getId() == itemId.longValue()){
                 flag=true;
                 //找到商品，数量相加
@@ -80,16 +82,24 @@ public class CartController {
      * @return
      */
     private List<TbItem> getCartListFromCookie(HttpServletRequest request){
+        /**
+         * 这里的cookieName是自己定义的，isDecoder表示开启默认的编码格式【默认为utf-8】
+         */
         String json = CookieUtils.getCookieValue(request, "cart", true);
         //判断json是否为空
         if (StringUtils.isBlank(json)){
             return new ArrayList<>();
         }
-        //吧json转换成一个商品列表
+        //把json转换成一个商品列表
         List<TbItem> list = JsonUtils.jsonToList(json, TbItem.class);
         return list;
     }
 
+    /**
+     * 展示商品购物车列表
+     * @param request
+     * @return
+     */
     @RequestMapping("/cart/cart")
     public String showCartList(HttpServletRequest request){
         //从cookie中取购物车列表
@@ -98,5 +108,51 @@ public class CartController {
         request.setAttribute("cartList",cartList);
         //返回逻辑视图
         return "cart";
+    }
+
+    /**
+     * 更新购物车商品数量
+     *      需要对cookie进行读写，加上HttpServletResponse 和 HttpServletRequest
+     */
+    @RequestMapping("/cart/update/num/{itemId}/{num}")
+    @ResponseBody
+    public E3Result updateCartNum(@PathVariable Long itemId,@PathVariable Integer num,
+                                  HttpServletRequest request,HttpServletResponse response){
+        //从cookie取购物车列表
+        List<TbItem> cartList = getCartListFromCookie(request);
+        //遍历商品列表，找到对应的商品
+        for (TbItem tbItem:cartList){
+            if (tbItem.getId().longValue()==itemId){
+                //更新数量
+                tbItem.setNum(num);
+                break;
+            }
+        }
+        //把购物车列表写回cookie
+        CookieUtils.setCookie(request,response,"cart",JsonUtils.objectToJson(cartList),COOKIE_CART_EXPIRE,true);
+        //返回成功
+        return E3Result.ok();
+    }
+
+    /**
+     * 删除购物车商品
+     */
+    @RequestMapping("/cart/delete/{itemId}")
+    public String deleteCartItem(@PathVariable Long itemId,HttpServletResponse response,HttpServletRequest request){
+        //从cookie中取购物车列表
+        List<TbItem> cartList = getCartListFromCookie(request);
+        //遍历列表，找到要删除的商品
+        for (TbItem tbItem:cartList){
+            if (tbItem.getId().longValue()==itemId){
+                //删除商品
+                cartList.remove(tbItem);
+                //跳出循环
+                break;
+            }
+        }
+        //把购物车列表写入cookie
+        CookieUtils.setCookie(request,response,"cart",JsonUtils.objectToJson(cartList),COOKIE_CART_EXPIRE,true);
+        //返回逻辑视图，并实现页面的跳转【redirect:跳转的路径名】
+        return "redirect:/cart/cart.html";
     }
 }

@@ -40,9 +40,20 @@
     <!--启动load-on-startup，才会初始化servlet，才会初始化一个spring容器-->
     <load-on-startup>1</load-on-startup>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>e3-cart-web</servlet-name>
     <!--伪静态化-->
     <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
+
+  <!--报406错误两种情况
+      1、没有Jackson的jar包
+      2、请求的后缀是*.html，不能响应一个json数据【原因：我请求的是html就需要响应一个html数据，不能响应一个java对象，这个会报406错误】
+  -->
+  <!--这里我们有两种url形式【.html和.action】，会被前端控制器拦截-->
+  <servlet-mapping>
+    <servlet-name>e3-cart-web</servlet-name>
+    <url-pattern>*.action</url-pattern>
   </servlet-mapping>
 </web-app>

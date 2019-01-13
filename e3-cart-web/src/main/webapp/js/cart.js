@@ -1,6 +1,6 @@
 var CART = {
 	itemNumChange : function(){
-		$(".increment").click(function(){//＋
+		$(".increment").click(function(){//+
 			var _thisInput = $(this).siblings("input");
 			_thisInput.val(eval(_thisInput.val()) + 1);
 			$.post("/cart/update/num/"+_thisInput.attr("itemId")+"/"+_thisInput.val() + ".action",function(data){
