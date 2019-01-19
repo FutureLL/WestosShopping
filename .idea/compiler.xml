@@ -12,6 +12,9 @@
         <module name="e3-content-interface" />
         <module name="e3-content-service" />
         <module name="e3-item-web" />
+        <module name="e3-order-interface" />
+        <module name="e3-order-service" />
+        <module name="e3-order-web" />
         <module name="e3-portal-web" />
         <module name="e3-search-interface" />
         <module name="e3-search-service" />

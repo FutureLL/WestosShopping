@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置分页插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--PageHelper插件4.0.0以后的版本支持自动识别使用的数据库,所以下面这个属性不需要写-->
+            <!--<property name="dialect" value="mysql"/>-->
+        </plugin>
+    </plugins>
+
+</configuration>
