@@ -38,6 +38,16 @@
         <!--<property name="maxUploadSize" value="5242880"></property>-->
     <!--</bean>-->
 
+    <!--拦截器配置-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--拦截所有url-->
+            <mvc:mapping path="/**"/>
+            <!--拦截器的实现类-->
+            <bean class="cn.e3mall.cart.interceptor.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!-- 引用dubbo服务 -->
     <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
     <dubbo:application name="e3-cart-web"/>
@@ -45,5 +55,7 @@
     <dubbo:registry protocol="zookeeper" address="zookeeper://127.0.0.1:2181"/>
     <!-- 生成远程服务代理，可以和本地bean一样使用itemService -->
     <dubbo:reference interface="cn.e3mall.service.ItemService" id="itemService" />
+    <dubbo:reference interface="cn.e3mall.sso.service.TokenService" id="tokenService" />
+    <dubbo:reference interface="cn.e3mall.cart.service.CartService" id="cartService" />
 
 </beans>
